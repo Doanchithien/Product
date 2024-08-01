@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'user#logout'
   post 'create_brand', to: 'brand#create_brand'
   get 'brand_list', to: 'brand#brand_list'
+  post 'create_product', to: 'product#create_product'
+  get 'product_list', to: 'product#product_list'
+  delete 'delete_product', to: 'product#delete_product'
+  patch 'update_product', to: 'product#update_product'
 end
