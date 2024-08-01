@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post '/register', to: 'user#register'
   post '/login', to: 'user#login'
   delete '/logout', to: 'user#logout'
+  post 'create_brand', to: 'brand#create_brand'
+  get 'brand_list', to: 'brand#brand_list'
 end
