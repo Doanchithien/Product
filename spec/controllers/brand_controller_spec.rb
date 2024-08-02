@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe BrandController, type: :controller do
+  let(:user) { FactoryBot.create(:user) }
+  before do
+    session[:user_id] = user.id
+  end
   let(:valid_params) do
     {
       name: 'Brand A',
