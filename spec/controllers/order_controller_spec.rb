@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe ClientProductController, type: :controller do
+RSpec.describe OrderController, type: :controller do
   let(:client) { FactoryBot.create(:client) }
   let(:brand) { FactoryBot.create(:brand) }
   let(:product) { FactoryBot.create(:product, brand_id: brand.id) }
-  let(:client_product) { FactoryBot.create(:client_product, client_id: client.id, product_id: product.id) }
+  let(:order) { FactoryBot.create(:order, client_id: client.id, product_id: product.id) }
 
   before do
     session[:client_id] = client.id
@@ -15,10 +15,9 @@ RSpec.describe ClientProductController, type: :controller do
       it 'returns a success message' do
         expect {
           post :create, params: { product_id: product.id }
-        }.to change(ClientProduct, :count).by(1)
-        binding.pry
+        }.to change(Order, :count).by(1)
         expect(response).to have_http_status(:created)
-        expect(JSON.parse(response.body)['message']).to eq('Product assigned to client successfully')
+        expect(JSON.parse(response.body)['message']).to eq('Client order product successfully')
       end
     end
 
@@ -34,15 +33,15 @@ RSpec.describe ClientProductController, type: :controller do
 
   describe 'DELETE #destroy' do
     context 'when the product is unassigned successfully' do
-      before { client_product }
+      before { order }
 
       it 'returns a success message' do
         expect {
           delete :destroy, params: { product_id: product.id }
-        }.to change(ClientProduct, :count).by(-1)
+        }.to change(Order, :count).by(-1)
 
         expect(response).to have_http_status(:ok)
-        expect(JSON.parse(response.body)['message']).to eq('Product unassigned from client successfully')
+        expect(JSON.parse(response.body)['message']).to eq('Client unorder product successfully')
       end
     end
 
@@ -51,7 +50,7 @@ RSpec.describe ClientProductController, type: :controller do
         delete :destroy, params: { product_id: -1 }
 
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(JSON.parse(response.body)['error']).to eq('Unable to unassign product from client')
+        expect(JSON.parse(response.body)['error']).to eq('Unable to unorder product from client')
       end
     end
   end
