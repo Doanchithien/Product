@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'product_list', to: 'product#product_list'
   delete 'delete_product', to: 'product#delete_product'
   patch 'update_product', to: 'product#update_product'
+  patch 'update_state_brand', to: 'state_management#update_state_brand'
+  patch 'update_state_product', to: 'state_management#update_state_product'
 end
