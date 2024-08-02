@@ -1,5 +1,6 @@
 class Admin::AdminController < ApplicationController
   before_action :authorize_request
+  skip_before_action :authorize_client
 
   private
 
