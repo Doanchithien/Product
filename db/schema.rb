@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_01_130709) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_02_033103) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_01_130709) do
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: true
   end
 
   create_table "products", force: :cascade do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_01_130709) do
     t.string "currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: true
     t.index ["brand_id"], name: "index_products_on_brand_id"
   end
 
