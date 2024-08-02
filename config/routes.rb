@@ -19,5 +19,9 @@ Rails.application.routes.draw do
     patch 'update_product', to: 'product#update_product'
     patch 'update_state_brand', to: 'state_management#update_state_brand'
     patch 'update_state_product', to: 'state_management#update_state_product'
+    post 'create_client', to: 'client#create'
   end
+
+  post 'login', to: 'session#login'
+  delete 'logout', to: 'session#logout'
 end
