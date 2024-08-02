@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'session#logout'
   post 'create_order', to: 'order#create'
   delete 'cancel_order', to: 'order#destroy'
+  post 'create_card', to: 'card#create'
+  patch 'cancel_card', to: 'card#cancel_card'
 end
