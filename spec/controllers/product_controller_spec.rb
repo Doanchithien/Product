@@ -1,7 +1,7 @@
 # spec/controllers/product_controller_spec.rb
 require 'rails_helper'
 
-RSpec.describe ProductController, type: :controller do
+RSpec.describe Admin::ProductController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
   before do
     session[:user_id] = user.id

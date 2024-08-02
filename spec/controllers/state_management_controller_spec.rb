@@ -1,7 +1,7 @@
 # spec/controllers/api/v1/state_management_controller_spec.rb
 require 'rails_helper'
 
-RSpec.describe StateManagementController, type: :controller do
+RSpec.describe Admin::StateManagementController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
   before do
     session[:user_id] = user.id

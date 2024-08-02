@@ -1,4 +1,4 @@
-class BrandController < ApplicationController
+class Admin::BrandController < Admin::AdminController
   skip_before_action :verify_authenticity_token
 
   def brand_list
