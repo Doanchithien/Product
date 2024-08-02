@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'session#logout'
   post 'client_assign_product', to: 'client_product#create'
   delete 'client_remove_product', to: 'client_product#destroy'
+  post 'create_card', to: 'card#create'
+  delete 'cancel_card', to: 'card#cancel_card'
 end

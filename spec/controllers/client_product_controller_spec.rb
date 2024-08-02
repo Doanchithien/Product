@@ -16,7 +16,6 @@ RSpec.describe ClientProductController, type: :controller do
         expect {
           post :create, params: { product_id: product.id }
         }.to change(ClientProduct, :count).by(1)
-        binding.pry
         expect(response).to have_http_status(:created)
         expect(JSON.parse(response.body)['message']).to eq('Product assigned to client successfully')
       end
