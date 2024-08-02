@@ -6,4 +6,7 @@ class Product < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :released_at, presence: true
   validates :brand_id, presence: true
+
+  has_many :client_products
+  has_many :clients, through: :client_products
 end
