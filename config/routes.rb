@@ -24,6 +24,6 @@ Rails.application.routes.draw do
 
   post 'login', to: 'session#login'
   delete 'logout', to: 'session#logout'
-  post 'client_assign_product', to: 'client_product#create'
-  delete 'client_remove_product', to: 'client_product#destroy'
+  post 'create_order', to: 'order#create'
+  delete 'cancel_order', to: 'order#destroy'
 end
