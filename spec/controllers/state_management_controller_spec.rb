@@ -1,4 +1,3 @@
-# spec/controllers/api/v1/state_management_controller_spec.rb
 require 'rails_helper'
 
 RSpec.describe Admin::StateManagementController, type: :controller do
