@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UserController, type: :controller do
+RSpec.describe Admin::UserController, type: :controller do
   let(:valid_params) { { email: 'user@example.com', password: 'password' } }
   let(:invalid_params) { { email: '', password: '' } }
   let(:user) { FactoryBot.create(:user) }

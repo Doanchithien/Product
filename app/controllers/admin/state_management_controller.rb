@@ -1,4 +1,4 @@
-class StateManagementController < ApplicationController
+class Admin::StateManagementController < Admin::AdminController
   skip_before_action :verify_authenticity_token
   before_action :set_brand, only: [:update_state_brand]
   before_action :set_product, only: [:update_state_product]

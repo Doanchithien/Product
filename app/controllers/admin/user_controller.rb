@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class Admin::UserController < Admin::AdminController
   skip_before_action :verify_authenticity_token
   skip_before_action :authorize_request, only: [:register, :login]
   
