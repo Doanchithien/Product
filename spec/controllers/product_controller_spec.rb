@@ -1,4 +1,3 @@
-# spec/controllers/product_controller_spec.rb
 require 'rails_helper'
 
 RSpec.describe Admin::ProductController, type: :controller do
