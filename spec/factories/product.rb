@@ -4,7 +4,7 @@ FactoryBot.define do
     description { "description" }
     logo_url { "" }
     released_at { "20240801" }
-    price { 200000 }
-    currency { "VND" }
+    price { 20 }
+    currency { "EUR" }
   end
 end

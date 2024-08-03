@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  monetize :price, as: "price_money", with_model_currency: :currency
+
   belongs_to :brand
 
   validates :price, presence: true, numericality: { greater_than: 0 }
