@@ -4,4 +4,5 @@ class Order < ApplicationRecord
 
   validates :client_id, presence: true
   validates :product_id, presence: true
+  has_many :transactions
 end

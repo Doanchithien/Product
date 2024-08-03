@@ -42,6 +42,8 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'money-rails'
+gem 'eu_central_bank'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

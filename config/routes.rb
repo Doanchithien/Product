@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   delete 'cancel_order', to: 'order#destroy'
   post 'create_card', to: 'card#create'
   patch 'cancel_card', to: 'card#cancel_card'
+  post 'create_payment', to: 'payment#create'
 end
