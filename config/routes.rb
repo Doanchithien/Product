@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     patch 'update_state_brand', to: 'state_management#update_state_brand'
     patch 'update_state_product', to: 'state_management#update_state_product'
     post 'create_client', to: 'client#create'
+    get 'cancel_card_histories', to: 'insight#cancel_card_histories'
+    get 'payments_of_clients', to: 'insight#payments_of_clients'
   end
 
   post 'login', to: 'session#login'
