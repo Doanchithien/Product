@@ -65,6 +65,23 @@ RSpec.describe PaymentService, type: :service do
       end
     end
 
+    context 'when client not have card' do
+      let(:service) { PaymentService.new(order.id, 99999) }
+
+      it 'raises an error' do
+        expect { service.validate_transaction }.to raise_error('Cannot found your card')
+      end
+    end
+
+    context 'when client card have been cancel' do
+      let(:cancel_card) { FactoryBot.create(:card, client_id: client.id, status: false) }
+      let(:service) { PaymentService.new(order.id, cancel_card.id) }
+
+      it 'raises an error' do
+        expect { service.validate_transaction }.to raise_error('Your card have been cancel')
+      end
+    end
+
     context 'when no transaction with status "inprogress" exists' do
       it 'does not raise an error' do
         expect { service.validate_transaction }.to_not raise_error

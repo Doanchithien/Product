@@ -30,6 +30,9 @@ class PaymentService
   end
 
   def validate_transaction
+    card = Card.find_by(id: @card_id)
+    raise "Cannot found your card" unless card
+    raise "Your card have been cancel" unless card&.status
     raise "Transaction have to cancel" if Transaction.exists?(order_id: @order_id, card_id: @card_id, status: 'inprogress')
   end
 end
