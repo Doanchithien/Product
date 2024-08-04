@@ -41,7 +41,7 @@ RSpec.describe PaymentController, type: :controller do
       it 'returns an error message for missing parameters' do
         post :create, params: invalid_params
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(JSON.parse(response.body)['error']).to eq('Transaction have to cancel')
+        expect(JSON.parse(response.body)['error']).to eq('Cannot found your card')
       end
     end
   end
